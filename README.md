@@ -2,10 +2,10 @@
 경북대학교 KDT(Korea Digital Training) 빅데이터 전문가 양성과정 5기 : Numpy 1팀입니다
 
 
-이화은 : https://github.com/Skylee0310  
-전진우 : https://github.com/zeeenoo11 
-옥영신 : https://github.com/YeongshinOk 
-명노아 : https://github.com/noah2397   
+이화은 : [깃허브 링크](https://github.com/Skylee0310)    
+전진우 : [깃허브 링크](https://github.com/zeeenoo11)    
+옥영신 : [깃허브 링크](https://github.com/YeongshinOk)     
+명노아 : [깃허브 링크](https://github.com/noah2397)    
 
 
 
