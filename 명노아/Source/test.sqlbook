@@ -63,3 +63,8 @@ select 순위, 팀, 연도 from baseballteam where 팀="한화";
 select 순위, 팀, 연도 from baseballteam where 순위=10;
 -- SQLBook: Code
 select * from baseballteam where 순위=1
+-- SQLBook: Code
+select 승률,연도 from baseballteam;
+-- SQLBook: Code
+select * from baseballteam where 연도=2023
+;
