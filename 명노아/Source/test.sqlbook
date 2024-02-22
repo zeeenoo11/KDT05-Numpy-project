@@ -1,0 +1,70 @@
+-- SQLBook: Code
+-- Active: 1706681927328@@127.0.0.1@3306@testdb
+select * from baseballteam;
+-- SQLBook: Code
+/*
+8 : 연속 : 게임의 연속 승/패
+9 : 타수(Consecutive Hits): 한 선수가 한 번의 타석에서 안타를 친 경우
+10 : 안타(Hit): 타자가 야구공에 맞아 베이스에 도달하는 것을 의미합니다.
+11 : 2타(2B, Double): 안타가 되어 나온 후, 주자가 두루타를 통해 2루에 도달하는 것을 나타냅니다.
+12 : 3타(3B, Triple): 주자가 삼루타를 통해 3루에 도달하는 것을 의미합니다.
+13 : 홈런(Homerun): 타자가 한 번의 안타로 마지막 베이스까지 도달하여 점수를 얻는 것을 의미합니다.
+14 : 타점(RBI, Runs Batted In): 타자가 안타 또는 희생플라이로 득점을 시킨 횟수를 나타냅니다.
+15 : 득점(Run): 주자가 홈플레이트를 밟아 득점하는 것을 의미합니다.
+16 : 도루(Stolen Base): 주자가 주루 중에 다음 베이스로 이동하는 행위를 의미합니다.
+17 : 사사구(공격) (BB, Walk): 투수가 타자에 대해 볼넷을 주어 1루로 나가게 하는 것을 의미합니다.
+18 : 삼진(Strikeout): 타자가 스트라이크 삼개를 받아 아웃되는 것을 의미합니다.
+19 : 병살(Double Play): 수비 팀이 두 번의 아웃을 만들어 하나의 타석에서 두 명의 주자를 제거하는 것을 의미합니다.
+20 : 타율(Batting Average): 타자가 안타를 치는 비율로, 타석당 안타의 평균입니다.
+21 : 출루율(On-Base Percentage): 타자가 안타, 볼넷, 몸에 맞는 공을 통해 베이스에 나가는 비율을 나타냅니다.
+22 : 장타율(Slugging Percentage): 타자가 친 모든 안타의 평균적인 장타 정도를 나타냅니다.
+23 : OPS(On-base Plus Slugging): 출루율과 장타율을 합친 통계로, 타자의 공격 능력을 나타냅니다.
+24 : 이닝(Inning): 한 경기에서 투수가 공을 던지는 시간 단위로, 3아웃이 되면 1이닝이 종료됩니다.
+25 : 피안타(Allowance Hit): 투수가 상대팀 타자에게 허용한 안타의 수를 나타냅니다.
+26 : 피홈런(Allowance Homerun): 투수가 상대팀 타자에게 허용한 홈런의 수를 나타냅니다.
+27 : 실점(Run Allowed): 투수가 허용한 득점의 수를 나타냅니다.
+28 : 자책(자책점, Earned Run): 투수가 허용한 득점 중에서 수비 상의 실수와 관련된 것이 아닌 투수 스스로의 실수로 인해 발생한 것을 나타냅니다.
+29 : 사사구(수비) (BB, Walk): 투수가 상대팀 타자에게 볼넷을 주어 1루로 나가게 하는 것을 의미합니다.
+30 : 탈삼진(Strikeout): 투수가 상대팀 타자를 삼진 처리하여 아웃시키는 것을 의미합니다.
+31 : 평균자책(평균자책점, ERA - Earned Run Average): 투수가 허용한 자책점의 평균값을 나타내는 통계로, 높은 값일수록 투수의 성적이 나쁨을 의미합니다.
+32 : 실책(Error): 수비 팀이 공을 처리하는 과정에서 발생한 실수를 의미합니다.
+33 : WHIP (Walks and Hits Per Inning Pitched): 투수가 얼마나 많은 주자들에게 베이스를 허용하는지를 나타내는 통계입니다.
+34 : QS (Quality Start): 투수가 경기에서 최소한 6이닝 이상을 던지고 3자 이하의 자책점을 허용하는 것을 나타냅니다.
+35 : 홀드(Hold): 구원 투수가 선발 투수의 승리를 돕기 위해 상대팀을 안타 없이 처리하고 선발 투수가 교체되기 전에 경기를 이어가는 경우를 나타냅니다.
+36 : 세이브(Save): 구원 투수가 팀이 승리할 때 마지막 이닝에 투수로서 나와 선발 투수의 승리를 지켜내는 경우를 나타냅니다.
+37 : 연도*/
+select * from baseballteam where 연도=2007;
+-- SQLBook: Code
+select * from baseballTeam where 평균자책 <= 3.99 and WHIP <= 1.39 and 세이브 >=38.16 order by 연도;
+-- SQLBook: Code
+select * from baseballteam where 순위 = 1;
+-- SQLBook: Code
+select * from baseballteam WHERE
+    승 >= 73
+    AND 패 <= 65
+    AND 게임차 <= 14.5
+    AND 2타 >= 193
+    AND 3타 >= 11
+    AND 홈런 >= 84
+    AND 타점 >= 568
+    AND 득점 >= 603
+    AND 사사구_x >= 518
+    AND 삼진 <= 1079
+    AND OPS >= 0.719
+    AND 피홈런 <= 776
+    AND 자책 <= 718
+    AND 사사구_y <= 661
+    AND 평균자책 <= 5.02
+    AND WHIP <= 1.53
+    AND QS >= 50
+    AND 세이브 >= 29;
+-- SQLBook: Code
+select 순위, 팀, 연도 from baseballteam where 팀="한화";
+select 순위, 팀, 연도 from baseballteam where 순위=10;
+-- SQLBook: Code
+select * from baseballteam where 순위=1
+-- SQLBook: Code
+select 승률,연도 from baseballteam;
+-- SQLBook: Code
+select * from baseballteam where 연도=2023
+;
